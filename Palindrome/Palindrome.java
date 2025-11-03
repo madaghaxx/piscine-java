@@ -9,6 +9,6 @@ public class Palindrome {
         for (int i = s.length() - 1; i >= 0; i--) {
             rev += s.charAt(i);
         }
-        return s.equals(rev);
+        return s.toLowerCase().equals(rev.toLowerCase());
     }
 }
