@@ -10,7 +10,7 @@ public class ComputeArray {
             if (array[i] % 3 == 0) {
                 arr[i] = array[i] * 5;
             } else if ((array[i] - 1) % 3 == 0) {
-                arr[i] = array[i] - 7;
+                arr[i] = array[i] + 7;
             } else {
                 arr[i] = array[i];
             }
