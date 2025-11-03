@@ -1,3 +1,4 @@
+
 public class ComputeArray {
 
     public static int[] computeArray(int[] array) {
@@ -9,7 +10,13 @@ public class ComputeArray {
             if (array[i] % 3 == 0) {
                 arr[i] = array[i] * 5;
             } else if ((array[i] - 1) % 3 == 0) {
-                arr[i] = array[i] + 7;
+                if (array[i] < 0) {
+                    arr[i] = array[i] - 7;
+
+                } else {
+
+                    arr[i] = array[i] + 7;
+                }
             } else {
                 arr[i] = array[i];
             }
