@@ -9,7 +9,7 @@ public class ComputeArray {
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 3 == 0) {
                 arr[i] = array[i] * 5;
-            } else if ((array[i] - 1) % 3 == 0) {
+            } else if ((array[i] + 1) % 3 == 0) {
                 arr[i] = array[i] + 7;
             } else {
                 arr[i] = array[i];
