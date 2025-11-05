@@ -1,3 +1,4 @@
+
 public class CelestialObject {
 
     public double x, y, z;
@@ -74,6 +75,9 @@ public class CelestialObject {
     }
 
     public Boolean equals(CelestialObject object) {
+        if (object == null) {
+            return false;
+        }
         return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name));
     }
 
