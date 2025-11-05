@@ -11,10 +11,10 @@ public class CelestialObject {
         name = "Soleil";
     }
 
-    public CelestialObject(double a, double b, double c, String iwa) {
-        x = a;
-        y = b;
-        z = c;
-        name = iwa;
+    public CelestialObject(double x, double y, double z, String name) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
     }
 }
