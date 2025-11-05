@@ -72,9 +72,13 @@ public class CelestialObject {
     }
 
     public Boolean equals(CelestialObject object) {
-        if (object == null) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
+
         return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name));
     }
 
