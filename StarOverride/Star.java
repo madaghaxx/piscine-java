@@ -41,6 +41,6 @@ public class Star extends CelestialObject {
     }
 
     public int hashCode() {
-        return java.util.Objects.hash(x, y, z, name, magnitude);
+        return java.util.Objects.hash(name, x, y, z, magnitude);
     }
 }
