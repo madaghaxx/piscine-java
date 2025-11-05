@@ -62,8 +62,8 @@ public class CelestialObject {
         return Math.sqrt(res);
     }
 
-    public double getDistanceBetweenInKm(CelestialObject a, CelestialObject b) {
-        return getDistanceBetween(a, b) * this.KM_IN_ONE_AU;
+    public static double getDistanceBetweenInKm(CelestialObject a, CelestialObject b) {
+        return getDistanceBetween(a, b) * CelestialObject.KM_IN_ONE_AU;
     }
-    public double KM_IN_ONE_AU = 150000000;
+    public static double KM_IN_ONE_AU = 150000000;
 }
