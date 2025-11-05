@@ -31,13 +31,13 @@ public class Star extends CelestialObject {
     }
 
     public Boolean equals(Star object) {
-        if (object == null) {
-            return false;
-        }
-        if (getClass() == object.getClass() && object==this) {
+        if (object == this) {
             return true;
         }
-        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.magnitude == object.magnitude );
+        if (getClass() != object.getClass() || object == null) {
+            return false;
+        }
+        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.magnitude == object.magnitude);
     }
 
     public int hashCode() {
