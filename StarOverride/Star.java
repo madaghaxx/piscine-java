@@ -13,7 +13,7 @@ public class Star extends CelestialObject {
 
     public Star() {
         super();
-        this.magnitude = 0;
+        this.magnitude = 0.0;
     }
 
     public Star(String a, double b, double c, double d, double e) {
@@ -31,12 +31,13 @@ public class Star extends CelestialObject {
     }
 
     public Boolean equals(Star object) {
-        if (object == this) {
+        if (this == object) {
             return true;
         }
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
+
         return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.magnitude == object.magnitude);
     }
 
