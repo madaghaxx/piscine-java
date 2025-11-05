@@ -24,9 +24,7 @@ public class Star extends CelestialObject {
     }
 
     public String toString() {
-        java.text.DecimalFormatSymbols sym = java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US);
-        java.text.DecimalFormat df = new java.text.DecimalFormat("0.000", sym);
-        return this.name + " shines at the " + df.format(this.magnitude) + " magnitude";
+        return this.name + " shines at the " + String.format("%.3f magnitude", this.magnitude);
     }
 
     public Boolean equals(Star object) {
