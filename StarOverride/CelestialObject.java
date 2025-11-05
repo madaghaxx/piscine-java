@@ -68,10 +68,7 @@ public class CelestialObject {
     }
 
     public String toString() {
-        java.text.DecimalFormatSymbols sym = java.text.DecimalFormatSymbols.getInstance(java.util.Locale.US);
-        java.text.DecimalFormat df = new java.text.DecimalFormat("0.000", sym);
-        return this.name + " is positioned at (" + df.format(this.x) + ", " + df.format(this.y) + ", "
-                + df.format(this.z) + ")";
+        return this.name + " is positioned at (" + String.format("%.3f, %.3f, %.3f)", this.x, this.y, this.z);
     }
 
     public Boolean equals(CelestialObject object) {
