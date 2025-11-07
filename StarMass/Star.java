@@ -1,3 +1,4 @@
+
 import java.util.Objects;
 
 public class Star extends CelestialObject {
@@ -8,8 +9,8 @@ public class Star extends CelestialObject {
         super();
     }
 
-    public Star(String name, double x, double y, double z, double magnitude) {
-        super(name, x, y, z);
+    public Star(String name, double x, double y, double z, double magnitude, int mass) {
+        super(name, x, y, z,mass);
         this.magnitude = magnitude;
     }
 
@@ -36,9 +37,9 @@ public class Star extends CelestialObject {
         return Objects.hash(name, x, y, z, magnitude);
     }
 
-    @Override  
+    @Override
     public String toString() {
         return String.format("%s shines at the %.3f magnitude", this.name, this.magnitude);
     }
-    
+
 }

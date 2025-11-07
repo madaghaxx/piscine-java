@@ -17,10 +17,11 @@ public class CelestialObject {
         this.name = "Soleil";
     }
 
-    public CelestialObject(String newName, double newX, double newY, double newZ) {
+    public CelestialObject(String newName, double newX, double newY, double newZ,int mass) {
         this.x = newX;
         this.y = newY;
         this.z = newZ;
+        this.mass = mass;
         this.name = newName;
     }
 
