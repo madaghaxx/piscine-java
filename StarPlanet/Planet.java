@@ -29,7 +29,7 @@ public class Planet extends CelestialObject {
             return false;
         }
 
-        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.centerStar == object.centerStar);
+        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.centerStar.equals(object.centerStar));
     }
 
     @Override
