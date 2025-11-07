@@ -1,6 +1,5 @@
 
 import java.util.Objects;
-
 public class CelestialObject {
 
     public double x;
