@@ -1,18 +1,16 @@
 
-import java.util.Objects;
-
 public class Planet extends CelestialObject {
 
     private Star centerStar;
 
     public Planet() {
         super();
-        this.centerStar = new Star();
+        centerStar = new Star();
     }
 
-    public Planet(String name, double x, double y, double z, Star star) {
+    public Planet(String name, double x, double y, double z, Star center) {
         super(name, x, y, z);
-        this.centerStar = star;
+        centerStar = center;
     }
 
     public Star getCenterStar() {
@@ -23,26 +21,25 @@ public class Planet extends CelestialObject {
         this.centerStar = center;
     }
 
-    @Override
-    public String toString() {
-        double distanceInAU = CelestialObject.getDistanceBetween(this, this.centerStar);
-        return String.format("%s circles around %s at the %.3f AU", getName(), centerStar.getName(), distanceInAU);
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (this == other) {
+    public Boolean equals(Planet object) {
+        if (this == object) {
             return true;
         }
-        if (other == null || getClass() != other.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        Planet planet = (Planet) other;
-        return super.equals(planet) && Objects.equals(this.centerStar, planet.centerStar);
+
+        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.centerStar == object.centerStar);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.getName(), super.getX(), super.getY(), super.getZ(), this.centerStar);
+        return java.util.Objects.hash(name, x, y, z, centerStar);
+    }
+
+    @Override
+    public String toString() {
+        double dis = CelestialObject.getDistanceBetween(this, this.centerStar);
+        return String.format("%s circles around %s at the %.3f AU", getName(), centerStar.getName(), dis);
     }
 }
