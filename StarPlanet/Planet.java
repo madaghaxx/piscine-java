@@ -22,14 +22,14 @@ public class Planet extends CelestialObject {
     }
 
     public Boolean equals(Planet object) {
-        if (this == object) {
-            return true;
-        }
-        if (object == null || getClass() != object.getClass()) {
-            return false;
+        if (super.equals(object)) {
+            Planet tt = (Planet)object;
+            return tt.getCenterStar()==this.centerStar;
+
         }
 
-        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.centerStar.equals(object.centerStar));
+        return false;
+
     }
 
     @Override
