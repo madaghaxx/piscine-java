@@ -23,11 +23,13 @@ public class Planet extends CelestialObject {
         this.centerStar = center;
     }
 
+    @Override
     public String toString() {
         double distanceInAU = CelestialObject.getDistanceBetween(this, this.centerStar);
         return String.format("%s circles around %s at the %.3f AU", getName(), centerStar.getName(), distanceInAU);
     }
 
+    @Override
     public boolean equals(Object other) {
         if (this == other) {
             return true;
@@ -39,6 +41,7 @@ public class Planet extends CelestialObject {
         return super.equals(planet) && Objects.equals(this.centerStar, planet.centerStar);
     }
 
+    @Override
     public int hashCode() {
         return Objects.hash(super.getName(), super.getX(), super.getY(), super.getZ(), this.centerStar);
     }
