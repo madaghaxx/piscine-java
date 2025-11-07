@@ -1,42 +1,43 @@
+import java.util.Objects;
 
 public class Star extends CelestialObject {
 
     private double magnitude;
 
+    public Star() {
+        super();
+    }
+
+    public Star(String name, double x, double y, double z, double magnitude) {
+        super(name, x, y, z);
+        this.magnitude = magnitude;
+    }
+
+    public void setMagnitude(double newMagnitude) {
+        this.magnitude = newMagnitude;
+    }
+
     public double getMagnitude() {
         return this.magnitude;
     }
 
-    public void setMagnitude(double test) {
-        this.magnitude = test;
-    }
-
-    public Star() {
-        super();
-        this.magnitude = 0.0;
-    }
-
-    public Star(String a, double b, double c, double d, double e) {
-        super(a, b, c, d);
-        this.magnitude = e;
-    }
-
-    public String toString() {
-        return this.name + " shines at the " + String.format("%.3f magnitude", this.magnitude);
-    }
-
-    public Boolean equals(Star object) {
-        if (this == object) {
-            return true;
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            Star objCasted = (Star) obj;
+            return this.magnitude == objCasted.getMagnitude();
         }
-        if (object == null || getClass() != object.getClass()) {
-            return false;
-        }
+        return false;
 
-        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name) && this.magnitude == object.magnitude);
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(name, x, y, z, magnitude);
+        return Objects.hash(name, x, y, z, magnitude);
+    }
+
+    @Override  
+    public String toString() {
+        return String.format("%s shines at the %.3f magnitude", this.name, this.magnitude); 
     }
 }
