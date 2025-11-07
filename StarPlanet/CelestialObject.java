@@ -83,7 +83,6 @@ public class CelestialObject {
         if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
-        // type casting here ;) we need to cast because it is of type Object
 
         CelestialObject otherCasted = (CelestialObject) other;
 
