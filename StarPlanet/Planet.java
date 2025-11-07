@@ -21,13 +21,12 @@ public class Planet extends CelestialObject {
         this.centerStar = center;
     }
 
-    public Boolean equals(Planet object) {
-        if (super.equals(object)) {
-            Planet tt = (Planet)object;
-            return tt.getCenterStar()==this.centerStar;
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            Planet objCasted = (Planet) obj;
+            return this.centerStar.equals(objCasted.getCenterStar());
         }
         return false;
-
     }
 
     @Override
