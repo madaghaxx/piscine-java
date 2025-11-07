@@ -1,9 +1,16 @@
 
+import java.util.Objects;
+
+
+
 public class CelestialObject {
 
-    public double x, y, z;
+    public double x;
+    public double y;
+    public double z;
     public String name;
-    public static double KM_IN_ONE_AU = 150000000;
+    public static final double KM_IN_ONE_AU = 150_000_000;
+
 
     public CelestialObject() {
         this.x = 0.0;
@@ -12,77 +19,81 @@ public class CelestialObject {
         this.name = "Soleil";
     }
 
-    public CelestialObject(String name, double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.name = name;
-    }
-
-    public double getX() {
-        return this.x;
-    }
-
-    public double getY() {
-        return this.y;
+    public CelestialObject(String newName, double newX, double newY, double newZ) {
+        this.x = newX;
+        this.y = newY;
+        this.z = newZ;
+        this.name = newName;
     }
 
     public double getZ() {
         return this.z;
     }
 
-    public void setX(double a) {
-        this.x = a;
+    public double getY() {
+        return this.y;
     }
 
-    public void setY(double a) {
-        this.y = a;
-    }
-
-    public void setZ(double a) {
-        this.z = a;
+    public double getX() {
+        return this.x;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void setName(String a) {
-        this.name = a;
+    public void setZ(double newZ) {
+        this.z = newZ;
     }
 
-    public static double getDistanceBetween(CelestialObject a, CelestialObject b) {
-        double xx, yy, zz;
-        xx = b.x - a.x;
-        yy = b.y - a.y;
-        zz = b.z - a.z;
-        xx *= xx;
-        yy *= yy;
-        zz *= zz;
-        double res = xx + yy + zz;
-        return Math.sqrt(res);
+    public void setY(double newY) {
+        this.y = newY;
     }
 
-    public static double getDistanceBetweenInKm(CelestialObject a, CelestialObject b) {
-        return getDistanceBetween(a, b) * CelestialObject.KM_IN_ONE_AU;
+    public void setX(double newX) {
+        this.x = newX;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public static double getDistanceBetween(CelestialObject obj1, CelestialObject obj2) {
+        double distanceX = obj1.x - obj2.x;
+        double distanceY = obj1.y - obj2.y;
+        double distanceZ = obj1.z - obj2.z;
+        return Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2) + Math.pow(distanceZ, 2));
+    }
+
+    public static double getDistanceBetweenInKm(CelestialObject obj1, CelestialObject obj2) {
+        double distance = getDistanceBetween(obj1, obj2);
+        return distance * KM_IN_ONE_AU;
     }
 
     public String toString() {
-        return this.name + " is positioned at (" + String.format("%.3f, %.3f, %.3f)", this.x, this.y, this.z);
+        return String.format("%s is positioned at (%.3f, %.3f, %.3f)", this.name, this.x, this.y, this.z);
     }
 
-    public Boolean equals(CelestialObject object) {
-        if (this == object) {
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
-        if (object == null || getClass() != object.getClass()) {
+
+        if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
+        // type casting here ;) we need to cast because it is of type Object
 
-        return (this.x == object.x && this.y == object.y && this.z == object.z && this.name.equals(object.name));
+        CelestialObject otherCasted = (CelestialObject) other;
+
+        return this.name.equals(otherCasted.getName()) && this.x == otherCasted.getX() && this.y == otherCasted.getY()
+                && this.z == otherCasted.getZ();
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(x, y, z, name);
+        return Objects.hash(name, x, y, z);
     }
+
 }
