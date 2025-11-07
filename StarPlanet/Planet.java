@@ -20,7 +20,7 @@ public class Planet extends CelestialObject {
     public void setCenterStar(Star center) {
         this.centerStar = center;
     }
-
+    @Override
     public boolean equals(Object obj) {
         if (super.equals(obj)) {
             Planet objCasted = (Planet) obj;
