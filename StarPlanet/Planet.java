@@ -25,9 +25,7 @@ public class Planet extends CelestialObject {
         if (super.equals(object)) {
             Planet tt = (Planet)object;
             return tt.getCenterStar()==this.centerStar;
-
         }
-
         return false;
 
     }
