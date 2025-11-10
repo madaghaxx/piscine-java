@@ -3,9 +3,9 @@ public abstract class Sorcerer extends Character implements Healer {
 
     int healCapacity;
 
-    public Sorcerer(String name, int max, int healCapacity) {
+    public Sorcerer(String name, int max, int ss) {
         super(name, max);
-        this.healCapacity = healCapacity;
+        this.healCapacity = ss;
     }
 
     @Override
