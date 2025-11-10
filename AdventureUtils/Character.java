@@ -56,9 +56,9 @@ public class Character {
     public static String printStatus() {
         if (allCharacters.isEmpty()) {
             return """
-                   ------------------------------------------
-                   Nobody's fighting right now !
-                   ------------------------------------------""";
+                    ------------------------------------------
+                    Nobody's fighting right now !
+                    ------------------------------------------""";
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("------------------------------------------\n");
@@ -68,6 +68,14 @@ public class Character {
             }
             sb.append("------------------------------------------");
             return sb.toString();
+        }
+    }
+
+    public static Character fight(Character hero1, Character hero2) {
+        if (hero1.getCurrentHealth() > hero2.getCurrentHealth()) {
+            return hero1;
+        } else {
+            return hero2;
         }
     }
 }
