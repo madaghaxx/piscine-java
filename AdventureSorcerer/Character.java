@@ -21,6 +21,10 @@ public class Character {
         return this.name;
     }
 
+    public void setCurrentHealth(int test) {
+        this.currentHealth = test;
+    }
+
     public Character(String nm, int max) {
         this.maxHealth = max;
         this.currentHealth = max;
