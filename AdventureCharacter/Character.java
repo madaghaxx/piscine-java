@@ -1,7 +1,7 @@
 
 public class Character {
 
-    static int maxHealth;
+    int maxHealth;
 
     public int getMaxHealth() {
         return this.maxHealth;
@@ -13,7 +13,7 @@ public class Character {
         return this.currentHealth;
     }
 
-    static String name;
+    String name;
 
     public String getName() {
         return this.name;
