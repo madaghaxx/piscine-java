@@ -1,7 +1,7 @@
 
 public class Templar extends Character implements Healer, Tank {
-    final int healCapacity;
-    final int shield;
+    private final int healCapacity;
+    private final int shield;
 
     public Templar(String name, int max, int healCap, int guard) {
         super(name, max);
