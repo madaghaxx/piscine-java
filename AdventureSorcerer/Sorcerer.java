@@ -1,7 +1,6 @@
 
 public class Sorcerer extends Character implements Healer {
 
-    // Healing capacity should not change after creation
     private final int healCapacity;
 
     public Sorcerer(String name, int maxHealth, int healCapacity) {
@@ -16,7 +15,6 @@ public class Sorcerer extends Character implements Healer {
 
     @Override
     public void heal(Character target) {
-        // If either the sorcerer or the target is dead, healing has no effect
         if (this.getCurrentHealth() <= 0 || target.getCurrentHealth() <= 0) {
             return;
         }
