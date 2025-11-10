@@ -75,13 +75,13 @@ public class Character {
         while (hero1.getCurrentHealth() > 0 && hero2.getCurrentHealth() > 0) {
             hero1.attack(hero2);
             if (hero2.getCurrentHealth() == 0) {
-                return hero2;
+                return hero1;
             }
             hero2.attack(hero1);
             if (hero1.getCurrentHealth() == 0) {
-                return hero1;
+                return hero2;
             }
         }
-        return hero1.getCurrentHealth() == 0 ? hero1 : hero2;
+        return hero1.getCurrentHealth() > 0 ? hero1 : hero2;
     }
 }
