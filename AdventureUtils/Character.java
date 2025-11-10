@@ -82,6 +82,6 @@ public class Character {
                 return hero1;
             }
         }
-        return hero1.getCurrentHealth() == 0 ? hero2 : hero2;
+        return hero1.getCurrentHealth() == 0 ? hero1 : hero2;
     }
 }
