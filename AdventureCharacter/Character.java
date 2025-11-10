@@ -13,7 +13,7 @@ public class Character {
         return this.currentHealth;
     }
 
-    String name;
+    private String name;
 
     public String getName() {
         return this.name;
