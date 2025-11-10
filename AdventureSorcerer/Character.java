@@ -1,4 +1,6 @@
 
+import java.util.List;
+
 public class Character {
 
     private final int maxHealth;
@@ -8,9 +10,7 @@ public class Character {
     }
 
     private int currentHealth;
-    public void setCurrentHealth(int heal){
-        this.currentHealth+=heal;
-    }
+
     public int getCurrentHealth() {
         return this.currentHealth;
     }
@@ -25,6 +25,7 @@ public class Character {
         this.maxHealth = max;
         this.currentHealth = max;
         this.name = nm;
+        allCharacters.add(this);
     }
 
     @Override
@@ -48,5 +49,39 @@ public class Character {
 
     public void attack(Character hero) {
         hero.takeDamage(9);
+    }
+
+    private static List<Character> allCharacters = new java.util.ArrayList<>();
+
+    public static String printStatus() {
+        if (allCharacters.isEmpty()) {
+            return """
+                    ------------------------------------------
+                    Nobody's fighting right now !
+                    ------------------------------------------\n""";
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append("------------------------------------------\n");
+            sb.append("Characters currently fighting :\n");
+            for (Character c : allCharacters) {
+                sb.append(" - ").append(c.toString()).append("\n");
+            }
+            sb.append("------------------------------------------\n");
+            return sb.toString();
+        }
+    }
+
+    public static Character fight(Character hero1, Character hero2) {
+        while (hero1.getCurrentHealth() > 0 && hero2.getCurrentHealth() > 0) {
+            hero1.attack(hero2);
+            if (hero2.getCurrentHealth() == 0) {
+                return hero1;
+            }
+            hero2.attack(hero1);
+            if (hero1.getCurrentHealth() == 0) {
+                return hero2;
+            }
+        }
+        return hero1.getCurrentHealth() > 0 ? hero1 : hero2;
     }
 }
