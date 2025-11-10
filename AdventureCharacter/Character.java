@@ -1,19 +1,19 @@
 
 public class Character {
 
-    int maxHealth;
+    private final int maxHealth;
 
     public int getMaxHealth() {
         return this.maxHealth;
     }
 
-    int currentHealth;
+    private int currentHealth;
 
     public int getCurrentHealth() {
         return this.currentHealth;
     }
 
-    private String name;
+    private final String name;
 
     public String getName() {
         return this.name;
