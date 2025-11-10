@@ -1,13 +1,16 @@
-public class Monster extends Character{
-    public Monster(String name,int max){
-        super(name,max);
+
+public class Monster extends Character {
+
+    public Monster(String name, int max) {
+        super(name, max);
     }
+
     @Override
     public String toString() {
-        if (this.getCurrentHealth()>0){
-            return this.getName()+" is a monster with "+this.getCurrentHealth()+" HP";
-        }else{
-            return this.getName()+" is a monster and is dead";
+        if (this.getCurrentHealth() > 0) {
+            return this.getName() + " is a monster with " + this.getCurrentHealth() + " HP";
+        } else {
+            return this.getName() + " is a monster and is dead";
         }
     }
 }
