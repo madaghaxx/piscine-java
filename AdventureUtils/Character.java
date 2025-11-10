@@ -83,6 +83,7 @@ public class Character {
         if (hero2.getCurrentHealth() == 0) {
             res = hero1;
         }
+        System.out.println(res);
         return res;
     }
 }
