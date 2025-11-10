@@ -55,12 +55,19 @@ public class Character {
 
     public static String printStatus() {
         if (allCharacters.isEmpty()) {
-            
-        } else {
             return """
                    ------------------------------------------
                    Nobody's fighting right now !
                    ------------------------------------------""";
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append("------------------------------------------\n");
+            sb.append("Characters currently fighting :\n");
+            for (Character c : allCharacters) {
+                sb.append(" - ").append(c.toString()).append("\n");
+            }
+            sb.append("------------------------------------------");
+            return sb.toString();
         }
     }
 }
