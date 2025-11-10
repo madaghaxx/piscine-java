@@ -1,4 +1,3 @@
-
 import java.util.List;
 
 public class Character {
@@ -58,7 +57,7 @@ public class Character {
             return """
                     ------------------------------------------
                     Nobody's fighting right now !
-                    ------------------------------------------""";
+                    ------------------------------------------\n""";
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("------------------------------------------\n");
@@ -85,3 +84,4 @@ public class Character {
         return hero1.getCurrentHealth() > 0 ? hero1 : hero2;
     }
 }
+
