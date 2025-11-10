@@ -51,7 +51,7 @@ public class Character {
         hero.takeDamage(9);
     }
 
-    private static List<Character> allCharacters;
+    private static List<Character> allCharacters = new java.util.ArrayList<>();
 
     public static String printStatus() {
         if (allCharacters.isEmpty()) {
