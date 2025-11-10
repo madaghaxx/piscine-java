@@ -1,5 +1,5 @@
 
-interface Healer {
+public interface Healer {
 
     public void heal(Character c);
 
