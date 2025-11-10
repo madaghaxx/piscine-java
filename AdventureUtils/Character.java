@@ -72,18 +72,16 @@ public class Character {
     }
 
     public static Character fight(Character hero1, Character hero2) {
-        Character res = hero1;
-        while (hero1.getCurrentHealth() > 0 | hero2.getCurrentHealth() > 0) {
+        while (hero1.getCurrentHealth() > 0 && hero2.getCurrentHealth() > 0) {
             hero1.attack(hero2);
+            if (hero2.getCurrentHealth() == 0) {
+                return hero2;
+            }
             hero2.attack(hero1);
+            if (hero1.getCurrentHealth() == 0) {
+                return hero1;
+            }
         }
-        if (hero1.getCurrentHealth() == 0) {
-            res = hero2;
-        }
-        if (hero2.getCurrentHealth() == 0) {
-            res = hero1;
-        }
-        System.out.println(res);
-        return res;
+        return hero1.getCurrentHealth() > 0 ? hero1 : hero2;
     }
 }
