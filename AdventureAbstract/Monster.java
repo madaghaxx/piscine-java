@@ -18,7 +18,7 @@ public class Monster extends Character {
     }
 
     public void takeDamage(int sub) {
-        int newHealth = (int)Math.floor((this.getCurrentHealth() - sub) * 0.8);
+        int newHealth = (int)Math.floor((sub) * 0.8);
         if (newHealth > 0) {
             super.setCurrentHealth(newHealth);
         } else {
