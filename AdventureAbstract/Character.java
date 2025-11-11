@@ -21,7 +21,7 @@ public abstract class Character {
         return this.name;
     }
 
-    public void setCurrentHealth(int test) {
+    protected void setCurrentHealth(int test) {
         this.currentHealth = test;
     }
 
