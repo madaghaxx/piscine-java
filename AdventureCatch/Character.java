@@ -47,14 +47,14 @@ public abstract class Character {
         }
     }
 
-    public abstract void takeDamage(int sub) throws DeadCharacterException;
+    public abstract void takeDamage(int sub)throws DeadCharacterException;
     // if (this.currentHealth - sub > 0) {
     // this.currentHealth -= sub;
     // } else {
     // this.currentHealth = 0;
     // }
 
-    public abstract void attack(Character hero);
+    public abstract void attack(Character hero)throws DeadCharacterException;
     // hero.takeDamage(9);
 
     private static List<Character> allCharacters = new java.util.ArrayList<>();
