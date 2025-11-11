@@ -4,10 +4,10 @@ import java.util.List;
 public abstract class Character {
 
     private final int maxHealth;
-    private Weapon sla7;
+    private Weapon weapon;
 
     public Weapon getWeapon() {
-        return this.sla7;
+        return this.weapon;
     }
 
     public int getMaxHealth() {
@@ -34,7 +34,7 @@ public abstract class Character {
         this.maxHealth = max;
         this.currentHealth = max;
         this.name = nm;
-        this.sla7 = sif;
+        this.weapon = sif;
         allCharacters.add(this);
     }
 
