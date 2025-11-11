@@ -6,6 +6,6 @@ public class DeadCharacterException extends Exception {
     }
 
     public String getMessage() {
-        return "The " + this.getClass().getName().toLowerCase() + " " + this.hero.getName() + " is dead.";
+        return "The " + this.hero.getClass().getName().toLowerCase() + " " + this.hero.getName() + " is dead.";
     }
 }
