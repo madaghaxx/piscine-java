@@ -55,7 +55,7 @@ public class Templar extends Character implements Healer, Tank {
     public void takeDamage(int sub) {
         int newHealth;
         if (this.sla7 != null) {
-            newHealth = (this.getCurrentHealth() - (sub - this.getShield())) + this.sla7.getDamage();
+            newHealth = (this.getCurrentHealth() - ((sub + this.sla7.getDamage()) - this.getShield()));
         } else {
             newHealth = this.getCurrentHealth() - (sub - this.getShield());
         }

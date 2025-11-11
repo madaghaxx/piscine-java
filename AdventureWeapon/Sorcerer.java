@@ -34,7 +34,7 @@ public class Sorcerer extends Character implements Healer {
     public void takeDamage(int sub) {
         int newHealth;
         if (this.sla7 != null) {
-            newHealth = (this.getCurrentHealth() - sub) + this.sla7.getDamage();
+            newHealth = (this.getCurrentHealth() - (sub+ this.sla7.getDamage()));
         } else {
             newHealth = this.getCurrentHealth() - sub;
         }
