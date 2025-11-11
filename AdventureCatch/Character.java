@@ -47,14 +47,14 @@ public abstract class Character {
         }
     }
 
-    public abstract void takeDamage(int sub)throws DeadCharacterException;
+    public abstract void takeDamage(int sub) throws DeadCharacterException;
     // if (this.currentHealth - sub > 0) {
     // this.currentHealth -= sub;
     // } else {
     // this.currentHealth = 0;
     // }
 
-    public abstract void attack(Character hero)throws DeadCharacterException;
+    public abstract void attack(Character hero) throws DeadCharacterException;
     // hero.takeDamage(9);
 
     private static List<Character> allCharacters = new java.util.ArrayList<>();
@@ -79,11 +79,21 @@ public abstract class Character {
 
     public static Character fight(Character hero1, Character hero2) {
         while (hero1.getCurrentHealth() > 0 && hero2.getCurrentHealth() > 0) {
-            hero1.attack(hero2);
+            try {
+
+                hero1.attack(hero2);
+            } catch (DeadCharacterException e) {
+                return hero2;
+            }
+            try {
+
+                hero2.attack(hero1);
+            } catch (DeadCharacterException e) {
+                return hero1;
+            }
             if (hero2.getCurrentHealth() == 0) {
                 return hero1;
             }
-            hero2.attack(hero1);
             if (hero1.getCurrentHealth() == 0) {
                 return hero2;
             }
