@@ -30,15 +30,15 @@ public class Monster extends Character {
 
     public void takeDamage(int sub) throws DeadCharacterException {
         int damage;
-        if (this.getCurrentHealth() == 0) {
-            throw new DeadCharacterException(this);
-        }
         damage = (int) Math.floor(sub * 0.8);
-
+        
         int newHealth = this.getCurrentHealth() - damage;
         if (newHealth > 0) {
             super.setCurrentHealth(newHealth);
         } else {
+            throw new DeadCharacterException(this);
+        }
+        if (this.getCurrentHealth() == 0) {
             throw new DeadCharacterException(this);
         }
     }
