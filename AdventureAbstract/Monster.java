@@ -19,7 +19,7 @@ public class Monster extends Character {
 
     public void takeDamage(int sub) {
         if (Math.floor((this.getCurrentHealth() - sub) * .8) > 0) {
-            this.setCurrentHealth(Math.floor((this.getCurrentHealth() - sub) * .8));
+            this.setCurrentHealth((int)Math.floor((this.getCurrentHealth() - sub) * .8));
         } else {
             this.setCurrentHealth(0);
         }
