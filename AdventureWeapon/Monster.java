@@ -8,15 +8,15 @@ public class Monster extends Character {
     public String toString() {
         if (this.getCurrentHealth() > 0) {
             return this.getName() + " is a monster with " + this.getCurrentHealth() + " HP. He has the weapon "
-                    + this.sla7.toString();
+                    + this.getWeapon().toString();
         } else {
-            return this.getName() + " is a monster and is dead. He has the weapon " + this.sla7.toString();
+            return this.getName() + " is a monster and is dead. He has the weapon " + this.getWeapon().toString();
         }
     }
 
     public void attack(Character sub) {
-        if (this.sla7 != null) {
-            sub.takeDamage(this.sla7.getDamage());
+        if (this.getWeapon() != null) {
+            sub.takeDamage(this.getWeapon().getDamage());
         } else {
             sub.takeDamage(7);
         }
