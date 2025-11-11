@@ -15,16 +15,18 @@ public class Monster extends Character {
     }
 
     public void attack(Character sub) {
-        sub.takeDamage(7);
+        if (this.sla7 != null) {
+            sub.takeDamage(this.sla7.getDamage());
+        } else {
+            sub.takeDamage(7);
+        }
     }
 
     public void takeDamage(int sub) {
         int damage;
-        if (this.sla7 != null) {
-            damage = (int) Math.floor(sub * 0.8) + this.sla7.getDamage();
-        } else {
-            damage = (int) Math.floor(sub * 0.8);
-        }
+
+        damage = (int) Math.floor(sub * 0.8);
+
         int newHealth = this.getCurrentHealth() - damage;
         if (newHealth > 0) {
             super.setCurrentHealth(newHealth);

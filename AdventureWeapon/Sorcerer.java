@@ -26,18 +26,20 @@ public class Sorcerer extends Character implements Healer {
         }
     }
 
-    public void attack(Character hero) {
+    public void attack(Character sub) {
         this.heal(this);
-        hero.takeDamage(10);
+        if (this.sla7 != null) {
+            sub.takeDamage(this.sla7.getDamage());
+        } else {
+            sub.takeDamage(10);
+        }
     }
 
     public void takeDamage(int sub) {
         int newHealth;
-        if (this.sla7 != null) {
-            newHealth = (this.getCurrentHealth() - (sub+ this.sla7.getDamage()));
-        } else {
-            newHealth = this.getCurrentHealth() - sub;
-        }
+
+        newHealth = this.getCurrentHealth() - sub;
+
         if (newHealth > 0) {
             this.setCurrentHealth(newHealth);
         } else {
