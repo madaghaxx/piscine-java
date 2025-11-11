@@ -29,11 +29,11 @@ public class Monster extends Character {
     }
 
     public void takeDamage(int sub) throws DeadCharacterException {
-        int damage;
-        damage = (int) Math.floor(sub * 0.8);
-        if (this.getCurrentHealth() == 0) {
+        if (this.getCurrentHealth() <= 0) {
             throw new DeadCharacterException(this);
         }
+        int damage;
+        damage = (int) Math.floor(sub * 0.8);
 
         int newHealth = this.getCurrentHealth() - damage;
 
