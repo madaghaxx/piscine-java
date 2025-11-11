@@ -18,10 +18,11 @@ public class Monster extends Character {
     }
 
     public void takeDamage(int sub) {
-        if (Math.floor((this.getCurrentHealth() - sub) * .8) > 0) {
-            this.setCurrentHealth((int)Math.floor((this.getCurrentHealth() - sub) * .8));
+        int newHealth = (int)Math.floor((this.getCurrentHealth() - sub) * 0.8);
+        if (newHealth > 0) {
+            super.setCurrentHealth(newHealth);
         } else {
-            this.setCurrentHealth(0);
+            super.setCurrentHealth(0);
         }
     }
 }
