@@ -15,10 +15,10 @@ public class Monster extends Character {
     }
 
     public void attack(Character sub) throws DeadCharacterException {
-        if (this.getCurrentHealth() == 0) {
+        if (this.getCurrentHealth() <= 0) {
             throw new DeadCharacterException(this);
         }
-        if (sub.getCurrentHealth() == 0) {
+        if (sub.getCurrentHealth() <= 0) {
             throw new DeadCharacterException(sub);
         }
         if (this.getWeapon() != null) {
