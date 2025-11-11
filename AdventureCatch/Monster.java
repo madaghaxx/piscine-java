@@ -37,6 +37,6 @@ public class Monster extends Character {
 
         int newHealth = this.getCurrentHealth() - damage;
 
-        super.setCurrentHealth(newHealth);
+        this.setCurrentHealth(newHealth);
     }
 }
