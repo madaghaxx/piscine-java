@@ -14,7 +14,7 @@ public class Monster extends Character {
     }
 
     public void attack(Character sub) {
-        sub.takeDamage(9);
+        sub.takeDamage(7);
     }
 
     public void takeDamage(int sub) {
