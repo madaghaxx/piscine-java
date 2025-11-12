@@ -14,7 +14,8 @@ public class SortList {
         if (list == null) {
             return null;
         }
-        list.sort((Integer a, Integer b) -> b.compareTo(a));
-        return list;
+        List<Integer> newlist = new java.util.ArrayList<>(list);
+        newlist.sort((Integer a, Integer b) -> b.compareTo(a));
+        return newlist;
     }
 }
