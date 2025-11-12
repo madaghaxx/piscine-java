@@ -14,7 +14,7 @@ public class SortList {
         if (list == null) {
             return null;
         }
-        list.sort((a, b) -> b - a);
+        list.sort((Integer a, Integer b) -> b.compareTo(a));
         return list;
     }
 }
