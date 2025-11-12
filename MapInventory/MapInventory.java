@@ -7,6 +7,9 @@ public class MapInventory {
         if (inventory == null) {
             return -1;
         }
+        if (inventory.get(productId) == null) {
+            return -1;
+        }
         return inventory.get(productId);
     }
 
