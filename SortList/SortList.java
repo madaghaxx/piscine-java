@@ -4,7 +4,7 @@ public class SortList {
 
     public static List<Integer> sort(List<Integer> list) {
         if (list.isEmpty()) {
-            return new java.util.ArrayList<>(list);
+            return new ArrayList<>(list);
         }
         list.sort(null);
         return list;
