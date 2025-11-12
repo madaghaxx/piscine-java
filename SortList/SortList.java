@@ -1,10 +1,10 @@
 import java.util.List;
-
+import java.util.ArrayList;
 public class SortList {
 
     public static List<Integer> sort(List<Integer> list) {
-        if (list == null) {
-            return null;
+        if (list.isEmpty()) {
+            return new java.util.ArrayList<>(list);
         }
         list.sort(null);
         return list;
@@ -14,7 +14,7 @@ public class SortList {
         if (list == null) {
             return null;
         }
-        List<Integer> newlist = new java.util.ArrayList<>(list);
+        List<Integer> newlist = new ArrayList<>(list);
         newlist.sort((Integer a, Integer b) -> b.compareTo(a));
         return newlist;
     }
