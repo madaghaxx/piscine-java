@@ -4,6 +4,9 @@ import java.util.ArrayList;
 public class SortList {
 
     public static List<Integer> sort(List<Integer> list) {
+        if (list == null) {
+            return null;
+        }
         if (list.isEmpty()) {
             return new ArrayList<>(list);
         }
@@ -13,6 +16,9 @@ public class SortList {
     }
 
     public static List<Integer> sortReverse(List<Integer> list) {
+        if (list == null) {
+            return null;
+        }
         if (list.isEmpty()) {
             return new ArrayList<>(list);
         }
