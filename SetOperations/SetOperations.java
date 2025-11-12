@@ -25,7 +25,7 @@ public class SetOperations {
         if (set2 == null) {
             return set1;
         }
-        Set<Integer> res = set1;
+        Set<Integer> res = new HashSet<>();
         for (int i : set2) {
             if (set1.contains(i)) {
                 res.add(i);
