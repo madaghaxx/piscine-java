@@ -8,6 +8,6 @@ public class SetEquals {
         if (set1 == null || set2 == null) {
             return false;
         }
-        set1.equals(set2);
+        return set1.equals(set2);
     }
 }
