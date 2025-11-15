@@ -3,9 +3,7 @@ import java.util.stream.Stream;
 import java.util.*;
 public class StreamMap {
     public static Integer sumOfStringLength(Stream<String> s) {
-        int res=0;
-        s.map(a -> res += a.length());
-        return res;
+        return s.mapToInt(a -> a.length()).sum();
     }
 
     public static List<String> upperCaseAllString(Stream<String> s) {
