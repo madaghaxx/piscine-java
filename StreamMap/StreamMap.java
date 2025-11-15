@@ -1,3 +1,4 @@
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.*;
 public class StreamMap {
@@ -8,7 +9,7 @@ public class StreamMap {
     }
 
     public static List<String> upperCaseAllString(Stream<String> s) {
-        return s.map(a -> a.toUpperCase());
+        return s.map(a -> a.toUpperCase()).collect(Collectors.toList());
     }
 
     public static Set<Integer> uniqIntValuesGreaterThan42(Stream<Double> s) {
