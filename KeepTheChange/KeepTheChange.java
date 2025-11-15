@@ -9,8 +9,8 @@ public class KeepTheChange {
         List<Integer> sortedCoins = new ArrayList<>(coins);
         sortedCoins.sort((a, b) -> b - a);
         int i = 0;
-        while (amount > 0) {
-            if (amount % sortedCoins.get(i) !=0) {
+        while (amount > 0 && i < sortedCoins.size()) {
+            if (amount >= sortedCoins.get(i)) {
                 res.add(sortedCoins.get(i));
                 amount -= sortedCoins.get(i);
             } else {
