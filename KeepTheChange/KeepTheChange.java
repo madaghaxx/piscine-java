@@ -10,7 +10,7 @@ public class KeepTheChange {
         sortedCoins.sort((a, b) -> b - a);
         int i = 0;
         while (amount > 0) {
-            if (amount % sortedCoins.get(i) >= 1) {
+            if (amount % sortedCoins.get(i) !=0) {
                 res.add(sortedCoins.get(i));
                 amount -= sortedCoins.get(i);
             } else {
