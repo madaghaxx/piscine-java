@@ -1,3 +1,5 @@
+import java.util.*;
+import java.util.stream.Stream;
 public class StreamMap {
     public static Integer sumOfStringLength(Stream<String> s) {
         int res;
