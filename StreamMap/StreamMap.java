@@ -3,7 +3,7 @@ import java.util.stream.Stream;
 public class StreamMap {
     public static Integer sumOfStringLength(Stream<String> s) {
         int res;
-        s.map(a -> res += a.lentgh());
+        s.map(a -> res += a.length());
         return res;
     }
 
