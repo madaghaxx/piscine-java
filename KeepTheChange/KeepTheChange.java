@@ -11,10 +11,12 @@ public class KeepTheChange {
         int i = 0;
         while (amount > 0) {
             if (amount % sortedCoins.get(i) > 1) {
+                res.add(sortedCoins.get(i));
                 amount -= sortedCoins.get(i);
             } else {
                 i++;
             }
         }
+        return res;
     }
 }
