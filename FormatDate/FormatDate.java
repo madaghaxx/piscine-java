@@ -8,7 +8,8 @@ public class FormatDate {
         if (dateTime == null) {
             return null;
         }
-        return String.format("Le %d %s de l'an %d à %dh%dm et %ds", dateTime.getDayOfMonth(), dateTime.getMonth(),
+        return String.format("Le %d %s de l'an %d à %dh%dm et %ds", dateTime.getDayOfMonth(),
+                dateTime.getMonth().getDisplayName(java.time.format.TextStyle.SHORT, java.util.Locale.ENGLISH),
                 dateTime.getYear(), dateTime.getHour(), dateTime.getMinute(), dateTime.getSecond());
     }
 
