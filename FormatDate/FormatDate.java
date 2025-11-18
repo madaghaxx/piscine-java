@@ -17,7 +17,7 @@ public class FormatDate {
             return null;
         }
         return String.format("%s %d %d",
-                date.getMonth().getDisplayName(java.time.format.TextStyle.SHORT, java.util.Locale.ITALIAN),
+                date.getMonth().getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ITALIAN),
                 date.getDayOfMonth(), date.getYear() % 100);
     }
 
