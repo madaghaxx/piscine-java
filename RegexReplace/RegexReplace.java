@@ -17,7 +17,7 @@ public class RegexReplace {
             "@***.***"
         ).replaceAll(
             "@([a-zA-Z0-9]+)\\.(com|org|net)\\b",
-            "@***.$2"
+            "@*******.$2"
         );
     }
 }
