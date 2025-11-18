@@ -21,7 +21,7 @@ public class ParseDate {
         if (stringDate == null) {
             return null;
         }
-        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("hh 'hours in the morning, 'mm 'minutes and' ss 'seconds'", java.util.Locale.ENGLISH);
+        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("HH 'hours in the morning, 'mm 'minutes and' ss 'seconds'", java.util.Locale.ENGLISH);
         return LocalTime.parse(stringDate, formatter);
     }
 }
