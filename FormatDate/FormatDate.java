@@ -5,15 +5,26 @@ import java.time.LocalTime;
 public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
+        if (dateTime == null) {
+            return null;
+        }
         return String.format("Le %d %s de l'an %d à %dh%dm et %ds", dateTime.getDayOfMonth(), dateTime.getMonth(),
                 dateTime.getYear(), dateTime.getHour(), dateTime.getMinute(), dateTime.getSecond());
     }
 
     public static String formatSimple(LocalDate date) {
-        return String.format("%s %d %d", date.getMonth().getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ITALIAN), date.getDayOfMonth(), date.getYear());
+        if (date == null) {
+            return null;
+        }
+        return String.format("%s %d %d",
+                date.getMonth().getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ITALIAN),
+                date.getDayOfMonth(), date.getYear() % 100);
     }
 
     public static String formatIso(LocalTime time) {
-        return String.format("%d:%d:%d.%d",time.getHour(),time.getMinute(),time.getSecond(),time.getNano());
+        if (time == null) {
+            return null;
+        }
+        return String.format("%d:%d:%d.%d", time.getHour(), time.getMinute(), time.getSecond(), time.getNano());
     }
 }
