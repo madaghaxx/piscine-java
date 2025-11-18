@@ -17,7 +17,7 @@ public class FormatDate {
             return null;
         }
         return String.format("%s %d %d",
-                date.getMonth().getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ITALIAN),
+                date.getMonth().getDisplayName(java.time.format.TextStyle.SHORT, java.util.Locale.ITALIAN),
                 date.getDayOfMonth(), date.getYear() % 100);
     }
 
@@ -25,6 +25,6 @@ public class FormatDate {
         if (time == null) {
             return null;
         }
-        return String.format("%d:%d:%d.%d", time.getHour(), time.getMinute(), time.getSecond(), time.getNano());
+        return time.toString();
     }
 }
