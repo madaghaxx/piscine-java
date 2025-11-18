@@ -14,13 +14,14 @@ public class ParseDate {
         if (stringDate == null) {
             return null;
         }
-        return LocalDate.parse(stringDate, java.time.format.DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy"));
+        return LocalDate.parse(stringDate, java.time.format.DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy", java.util.Locale.ENGLISH));
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
         if (stringDate == null) {
             return null;
         }
-        return LocalTime.parse(stringDate);
+        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("hh 'hours in the' a', 'mm 'minutes and' ss 'seconds'", java.util.Locale.ENGLISH);
+        return LocalTime.parse(stringDate, formatter);
     }
 }
