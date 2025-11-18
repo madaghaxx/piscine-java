@@ -23,7 +23,7 @@ public class ParseDate {
             return null;
         }
         java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter
-                .ofPattern("hh'hours in the'a', 'mm'minutes and'ss'seconds'", java.util.Locale.ENGLISH);
+                .ofPattern("hh' hours in the 'a', 'mm' minutes and 'ss' seconds'", java.util.Locale.ENGLISH);
         return LocalTime.parse(stringDate, formatter);
     }
 }
