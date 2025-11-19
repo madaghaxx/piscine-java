@@ -1,8 +1,8 @@
 class Context {
     OperationStrategy operationStrategy;
 
-    public Context(OperationStrategy operationStrategy) {
-        this.operationStrategy = operationStrategy;
+    public Context() {
+        this.operationStrategy = new AddStrategy();
     }
 
     public void changeStrategy(OperationStrategy operationStrategy) {
