@@ -11,7 +11,7 @@ class Excalibur {
         return this.name;
     }
 
-    public Excalibur getInstance() {
+    public static Excalibur getInstance() {
         return new Excalibur("Sword");
     }
 }
