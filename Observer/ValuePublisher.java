@@ -8,6 +8,9 @@ class ValuePublisher {
     }
 
     public void subscribe(NumericBaseObserver observer) {
+        if (observer == null) {
+            return;
+        }
         observers.add(observer);
     }
 
