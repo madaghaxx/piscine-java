@@ -1,7 +1,6 @@
-class WithColdMeats {
-    private Raclette decoratedRaclette;
+class WithColdMeats extends RacletteDecorator {
 
-    public void RacletteDecorator(Raclette raclette) {
+    public WithColdMeats(Raclette raclette) {
         this.decoratedRaclette = raclette;
     }
 
@@ -14,7 +13,7 @@ class WithColdMeats {
         return this.decoratedRaclette.getIngredients() + ", charcuterie";
     }
 
-    public String toString(){
+    public String toString() {
         return String.format("%s pour %d calories", this.getIngredients(), this.getCalories());
     }
 }
