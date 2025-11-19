@@ -10,6 +10,6 @@ abstract class RacletteDecorator implements Raclette {
     }
 
     public String toString(){
-        return String.format("%s pour %d calories", this.getIngredients(),this.getCalories())
+        return String.format("%s pour %d calories", this.getIngredients(), this.getCalories());
     }
 }
