@@ -1,5 +1,5 @@
 class DriverFactory {
-    public Driver getDriver(String driver) {
+    public static Driver getDriver(String driver) {
         if (driver == "Car") {
             return new CarDriver();
         } else {
